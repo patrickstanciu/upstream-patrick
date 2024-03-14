@@ -88,9 +88,9 @@ Theorically, you should compare the `inReplyTo` property with the `universalMess
 
 Concretely, when running `yarn start`, the console should display messages grouped by threads, whereas currently they are all grouped into the same default thread.
 
-**Note: The email API does not return items in a chronological order.**
-
-**Note**: The RFC 5322 [defines](https://datatracker.ietf.org/doc/html/rfc5322#section-3.6.4) the structure of `Message-Id` as being akin to an email address format, which explains why message IDs are imported as a `Contact` instance.
+Notes: 
+- The email API does not return items in a chronological order.
+- The RFC 5322 [defines](https://datatracker.ietf.org/doc/html/rfc5322#section-3.6.4) the structure of `Message-Id` as being akin to an email address format, which explains why message IDs are imported as a `Contact` instance.
 
 ### Task 2: Take messages stored in database into account
 
