@@ -1,0 +1,158 @@
+{
+  "emails": [
+    {
+      "id": "f2j2k2ko8s470659",
+      "universal_message_id": "<xyz01z23@starnet.tech>",
+      "in_reply_to": "<stu90v12@starnet.tech>",
+      "from": "Dev Team <dev@starnet.tech>",
+      "to": "Ava Sky <ava.sky@starnet.tech>, Chris Blue <chris.blue@starnet.tech>",
+      "cc": "",
+      "body": "<html><body><p>Ava & Chris,</p><p>We've identified the primary issues. We'll discuss solutions during the brainstorming session.</p><p>Best,<br>Dev Team</p></body></html>",
+      "subject": "Re: Software Release Update",
+      "date": "2023-10-06T21:00:00Z"
+    },
+    {
+      "id": "28b1a916c6e25736",
+      "universal_message_id": "<abc56f89@techsolutions.inc>",
+      "in_reply_to": "<abc12f34@techsolutions.inc>",
+      "from": "Amy Lee <amy.lee@techsolutions.inc>",
+      "to": "James Wilson <james.wilson@techsolutions.inc>",
+      "cc": "Rachel Green <rachel.green@techsolutions.inc>",
+      "body": "<html><body><p>James,</p><p>Yes, let's discuss tomorrow at 10 AM.</p><p>Best,<br>Amy</p></body></html>",
+      "subject": "Re: Software Update Discussion",
+      "date": "2023-10-06T11:00:00Z"
+    },
+    {
+      "id": "48b3a938e8g47958",
+      "universal_message_id": "<ghi78i90@biogenlabs.com>",
+      "in_reply_to": "<def56g78@biogenlabs.com>",
+      "from": "Dr. Marie <marie@biogenlabs.com>",
+      "to": "Dr. Albert <albert@biogenlabs.com>",
+      "cc": "",
+      "body": "<html><body><p>Albert,</p><p>I've looked into the data. Let's meet today after lunch.</p><p>Regards,<br>Marie</p></body></html>",
+      "subject": "Re: Recent Research Findings",
+      "date": "2023-10-05T15:00:00Z"
+    },
+    {
+      "id": "38b2a927d7f36847",
+      "universal_message_id": "<def56g78@biogenlabs.com>",
+      "in_reply_to": null,
+      "from": "Dr. Albert <albert@biogenlabs.com>",
+      "to": "Dr. Marie <marie@biogenlabs.com>",
+      "cc": "Lab Team <labteam@biogenlabs.com>",
+      "body": "<html><body><p>Marie,</p><p>We need to analyze the recent findings. Thoughts?</p><p>Best,<br>Albert</p></body></html>",
+      "subject": "Recent Research Findings",
+      "date": "2023-10-05T12:00:00Z"
+    },
+    {
+      "id": "b9d9e9fk4o038215",
+      "universal_message_id": "<lmn23o45@autodrive.motors>",
+      "in_reply_to": "<jkl01m23@autodrive.motors>",
+      "from": "Sophie White <sophie.white@autodrive.motors>",
+      "to": "Lucas Grey <lucas.grey@autodrive.motors>",
+      "cc": "Sales Team <sales@autodrive.motors>",
+      "body": "<html><body><p>Lucas,</p><p>Great! I've booked the conference room for our presentation.</p><p>Best,<br>Sophie</p></body></html>",
+      "subject": "Re: New Car Model Presentation",
+      "date": "2023-10-04T01:00:00Z"
+    },
+    {
+      "id": "68b5a95ag0k69270",
+      "universal_message_id": "<mno45p67@earthsustain.org>",
+      "in_reply_to": null,
+      "from": "Ella Stone <ella.stone@earthsustain.org>",
+      "to": "Benjamin Tree <benjamin.tree@earthsustain.org>",
+      "cc": "",
+      "body": "<html><body><p>Benjamin,</p><p>We need to organize the upcoming environmental summit. Do you have the list of participants?</p><p>Warm regards,<br>Ella</p></body></html>",
+      "subject": "Upcoming Environmental Summit",
+      "date": "2023-10-04T15:00:00Z"
+    },
+    {
+      "id": "78b6a96bh1l70381",
+      "universal_message_id": "<qrs89t12@starnet.tech>",
+      "in_reply_to": null,
+      "from": "Chris Blue <chris.blue@starnet.tech>",
+      "to": "Ava Sky <ava.sky@starnet.tech>",
+      "cc": "Dev Team <dev@starnet.tech>, Labs <labs@starnet.tech>",
+      "body": "<html><body><p>Ava,</p><p>The software release is delayed. We need to address some critical issues.</p><p>Best,<br>Chris</p></body></html>",
+      "subject": "Software Release Update",
+      "date": "2023-10-02T16:00:00Z"
+    },
+    {
+      "id": "98b7a97ci2m81592",
+      "universal_message_id": "<def34g56@techsolutions.inc>",
+      "in_reply_to": "<abc56f89@techsolutions.inc>",
+      "from": "Rachel Green <rachel.green@techsolutions.inc>",
+      "to": "James Wilson <james.wilson@techsolutions.inc>, Amy Lee <amy.lee@techsolutions.inc>",
+      "cc": "",
+      "body": "<html><body><p>Both,</p><p>I'd like to join tomorrow's meeting. See you at 10 AM.</p><p>Thanks,<br>Rachel</p></body></html>",
+      "subject": "Re: Software Update Discussion",
+      "date": "2023-10-06T15:30:00Z"
+    },
+    {
+      "id": "a8c8d9ej3n927104",
+      "universal_message_id": "<ijk89l01@biogenlabs.com>",
+      "in_reply_to": "<ghi78i90@biogenlabs.com>",
+      "from": "Lab Team <labteam@biogenlabs.com>",
+      "to": "Dr. Albert <albert@biogenlabs.com>, Dr. Marie <marie@biogenlabs.com>",
+      "cc": "",
+      "body": "<html><body><p>All,</p><p>We've compiled the results and will bring them to the meeting.</p><p>Best,<br>Team</p></body></html>",
+      "subject": "Re: Recent Research Findings",
+      "date": "2023-10-07T16:30:00Z"
+    },
+    {
+      "id": "c9f9g9hl5p149326",
+      "universal_message_id": "<opq56r78@earthsustain.org>",
+      "in_reply_to": "<mno45p67@earthsustain.org>",
+      "from": "Benjamin Tree <benjamin.tree@earthsustain.org>",
+      "to": "Ella Stone <ella.stone@earthsustain.org>",
+      "cc": "",
+      "body": "<html><body><p>Ella,</p><p>I'll send you the list by the end of the day.</p><p>Thanks,<br>Benjamin</p></body></html>",
+      "subject": "Re: Upcoming Environmental Summit",
+      "date": "2023-10-06T18:00:00Z"
+    },
+    {
+      "id": "d0g0h0im6q250437",
+      "universal_message_id": "<stu90v12@starnet.tech>",
+      "in_reply_to": "<qrs89t12@starnet.tech>",
+      "from": "Ava Sky <ava.sky@starnet.tech>",
+      "to": "Chris Blue <chris.blue@starnet.tech>",
+      "cc": "Dev Team <dev@starnet.tech>",
+      "body": "<html><body><p>Chris,</p><p>We need to ensure that all issues are resolved before the release. I'll gather the team for a brainstorming session.</p><p>Best,<br>Ava</p></body></html>",
+      "subject": "Re: Software Release Update",
+      "date": "2023-10-06T19:00:00Z"
+    },
+    {
+      "id": "e1i1j1jn7r360548",
+      "universal_message_id": "<uvw34w56@autodrive.motors>",
+      "in_reply_to": "<lmn23o45@autodrive.motors>",
+      "from": "Sales Team <sales@autodrive.motors>",
+      "to": "Lucas Grey <lucas.grey@autodrive.motors>, Sophie White <sophie.white@autodrive.motors>",
+      "cc": "",
+      "body": "<html><body><p>Lucas & Sophie,</p><p>We're excited to see the new model. Let's make this presentation a success!</p><p>Regards,<br>Sales Team</p></body></html>",
+      "subject": "Re: New Car Model Presentation",
+      "date": "2023-10-04T20:00:00Z"
+    },
+    {
+      "id": "18b0a905c5d14625",
+      "universal_message_id": "<abc12f34@techsolutions.inc>",
+      "in_reply_to": null,
+      "from": "James Wilson <james.wilson@techsolutions.inc>",
+      "to": "Amy Lee <amy.lee@techsolutions.inc>",
+      "cc": "Rachel Green <rachel.green@techsolutions.inc>",
+      "body": "<html><body><p>Amy,</p><p>Can we meet to discuss the new software update?</p><p>Regards,<br>James</p></body></html>",
+      "subject": "Software Update Discussion",
+      "date": "2023-10-01T10:00:00Z"
+    },
+    {
+      "id": "58b4a949f9j58169",
+      "universal_message_id": "<jkl01m23@autodrive.motors>",
+      "in_reply_to": null,
+      "from": "Lucas Grey <lucas.grey@autodrive.motors>",
+      "to": "Sophie White <sophie.white@autodrive.motors>",
+      "cc": "Sales Team <sales@autodrive.motors>",
+      "body": "<html><body><p>Sophie,</p><p>The new car model is ready for presentation. Can we schedule a meeting?</p><p>Thanks,<br>Lucas</p></body></html>",
+      "subject": "New Car Model Presentation",
+      "date": "2023-10-03T14:00:00Z"
+    }
+  ]
+}

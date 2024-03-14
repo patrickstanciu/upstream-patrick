@@ -1,0 +1,22 @@
+{
+  "name": "upstream-sync",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "create-db-schema": "ts-node src/create-db-schema.ts"
+  },
+  "devDependencies": {
+    "@types/sqlite3": "^3.1.9",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "node-fetch": "^3.3.2",
+    "sqlite": "^5.0.1",
+    "sqlite3": "^5.1.6"
+  }
+}
