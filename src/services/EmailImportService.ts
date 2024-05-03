@@ -6,6 +6,7 @@ import { EmailEntity } from "../model/entities/EmailEntity";
 import { MessageEntity } from "../model/entities/MessageEntity";
 import { ThreadEntity } from "../model/entities/ThreadEntity";
 import { EmailFetcherService } from "./EmailFetcherService";
+import {Contact} from "../model/value-objects/Contact";
 
 export class EmailImportService {
   constructor(
@@ -16,11 +17,35 @@ export class EmailImportService {
     private readonly userRepository: UserRepository
   ) {}
 
+
   public async import(): Promise<void> {
     const fetchedEmails = await this.retrieveAndPersistEmails();
-    const defaultThread = await this.createDefaultThread();
-    const messages = await Promise.all(fetchedEmails.map((email) => this.createMessageFromEmail(email, defaultThread)));
-    await this.messageRepository.persist(messages);
+    const threads: Map<Contact, ThreadEntity> = new Map();
+
+    for (const email of fetchedEmails) {
+      let thread: ThreadEntity | null = null;
+
+      if (email.inReplyTo) {
+        const existingMessage = await this.messageRepository.findOneByEmailUniversalMessageIdentifier(new Contact(email.inReplyTo.name, email.inReplyTo.email));
+        if (existingMessage) {
+          thread = await this.threadRepository.findById(existingMessage.threadId);
+        }
+      }
+
+      if (!thread) {
+        thread = new ThreadEntity(`Thread for ${email.universalMessageId}`);
+        await this.threadRepository.persist([thread]);
+        threads.set(email.universalMessageId, thread);
+        if (email.inReplyTo) {
+          threads.set(email.inReplyTo, thread);
+        }
+      }
+
+      threads.set(email.universalMessageId, thread);
+
+      const message = await this.createMessageFromEmail(email, thread);
+      await this.messageRepository.persist([message]);
+    }
   }
 
   private async retrieveAndPersistEmails() {

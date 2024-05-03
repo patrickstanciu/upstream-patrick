@@ -99,7 +99,21 @@ In the first task, you organized messages into threads by matching the `In-Reply
 #### Questions
 
 1. To include messages already stored in the database, which existing repository method should be leveraged?
+
+    To include messages already stored in the database when organizing emails into threads, you should leverage the findOneByEmailUniversalMessageIdentifier method from the MessageRepository. 
+This method is designed to find an existing message based on the universal message identifier, which typically correlates with the email's Message-Id or its equivalent identifier.
+
 2. Describe how you would use this method to achieve the intended outcome. Implementation details are not required, just a clear explanation of your approach.
+
+    * Retrieve Incoming Email Details: For each email being imported, check whether it has an In-Reply-To field. This field generally contains the Message-Id of the email to which the current email is replying.
+    * Check for Existing Messages in the Database: Use the findOneByEmailUniversalMessageIdentifier method to search for an existing message in the database that has a Message-Id matching the In-Reply-To value of the current email.
+   * Link to Existing Threads:
+       * If an existing message is found, retrieve the ThreadEntity associated with this message using the threadId found in the retrieved message. This ensures that the current email is linked to the same thread as the previous correspondence.
+       * If no existing message is found (i.e., this might be the first email in a thread or the corresponding email hasn't been imported yet), create a new ThreadEntity for this email and use it for any subsequent emails that reference this one.
+   * Continue Processing:
+       * Add the current email as a new message in the identified or newly created thread.
+       * Update any in-memory structures or caches to reflect the addition of this new message to the thread.
+       * Edge Case Handling: Ensure that you handle edge cases where the In-Reply-To might not directly link to a single message due to issues like multiple responses to the same original email or discrepancies in Message-Id formatting.    
 
 ### Task 3: Display the domain name of the sender
 
@@ -111,9 +125,49 @@ Consider a scenario where emails of different users are imported daily through p
 
 Given that import processes are executed in parallel, there's a risk that emails corresponding to a specific `Message-Id` might be imported multiple times. Explain how you would ensure that only a single instance of an email is imported for each unique `Message-Id`? Your response may involve infrastructure or architectural changes if needed, but this is not required. Do not implement the solution, just describe the approach you would take.
 
+Preventing duplicate imports in a scenario where emails are processed can be done in multiple ways: 
+
+The simplest and most effective method is to enforce uniqueness at the database level. 
+You can achieve this by adding a unique constraint to the Message-Id field in the email table. 
+This prevents the database from inserting duplicate entries based on the Message-Id. 
+Also using transactions when inserting new emails into the database. 
+Ensure that the operation either fully completes or rolls back in case of failure, such as when a duplicate is detected. 
+
+This can be done also with application level locking: Before inserting an email, the service could acquire a lock based on the Message-Id. 
+Redis can be used where each Message-Id acts as a lock key. Before processing each email, the service must acquire a lock on its Message-Id. 
+If the lock is already held, the service waits or skips processing for that email. 
+
+Another way would be using a message queuing system that supports message deduplication based on custom identifiers like Message-Id. AWS SQS, for example, offers deduplication 
+for up to 5 minutes using a deduplication ID.
+
+
 ### Task 5: Testing
 
 What do you believe is the most effective strategy for testing this project? What is your philosophy regarding testing?
+
+**Unit Testing:**
+* Purpose: Ensure that individual components or functions behave as expected in isolation.
+* Components to Test: Classes and methods in isolation, such as EmailRepository, MessageRepository, ThreadRepository, EmailFetcherService, and utility functions like domain extraction from email addresses.
+* Tools: Use frameworks like Jest or Mocha for JavaScript/TypeScript. Mock dependencies using libraries like Sinon or Jest mocks.
+* Test Cases: Include scenarios for both expected behavior and edge cases. For example, testing the handling of invalid email formats, correct thread identification based on Message-Id and In-Reply-To, and error handling in database operations.
+
+**Integration Testing:**
+* Purpose: Ensure that different components work together as expected.
+* Components to Test: Interactions between repositories and services, such as the integration of EmailImportService with EmailRepository, MessageRepository, and ThreadRepository.
+* Tools: Frameworks like Jest with support for testing with a test database or using mocked database responses.
+* Test Cases: Test the import process with realistic data sets, ensuring emails are fetched, stored, and threaded correctly. Also, verify that duplicate emails are handled appropriately.
+
+**End-to-End Testing:**
+* Purpose: Validate the entire application from start to finish, simulating real-world usage.
+* Components to Test: The complete process from fetching emails to displaying messages.
+* Tools: Cypress or Selenium for web-based interfaces, or specialized tools if the service interfaces with email servers directly.
+* Test Cases: Simulate the daily operation of the service, including handling of large volumes of diverse emails and concurrent access scenarios to ensure the system performs well under stress and concurrency.
+
+Every layer of the application should be tested, from the smallest unit through to the complete system.
+Tests should not only cover expected use cases but also edge cases and potential misuse scenarios to ensure the system is robust.
+
+Testing should be integrated into the development process, with tests run automatically on code check-ins and as part of the build process.
+Testing should provide quick and clear feedback. This is crucial for fast-paced development environments and helps in early detection of issues.
 
 ## Feedback
 
